@@ -5,10 +5,18 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Base" />
       <Folder Include="Engine\Modules" />
-      <Folder Include="Functions" />
-      <Folder Include="Operations" />
+      <Folder Include="Model\Functions\Elementary" />
+      <Folder Include="Model\Functions\Hyperbolic" />
+      <Folder Include="Model\Functions\InverseTrig" />
+      <Folder Include="Model\Functions\Trigonometric" />
+      <Folder Include="Model\Operations" />
+      <Folder Include="Parser\Grammar" />
+      <Folder Include="Parser\Visitor" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="MathNet.Numerics" Version="4.7.0" />
     </ItemGroup>
 
 </Project>
