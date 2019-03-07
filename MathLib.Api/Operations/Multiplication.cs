@@ -1,9 +1,9 @@
 using System;
-using MathLib.Api.Model.Base;
+using MathLib.Api.Base;
 
-namespace MathLib.Api.Model.Operations
+namespace MathLib.Api.Operations
 {
-    public class Multiplication : Operator
+    internal class Multiplication : Operator
     {
         private Multiplication(Function a, Function b) : base(a, b)
         {

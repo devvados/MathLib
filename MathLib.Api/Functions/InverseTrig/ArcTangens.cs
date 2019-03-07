@@ -1,21 +1,17 @@
 using System;
-using MathLib.Api.Model.Base;
+using MathLib.Api.Base;
 using MathNet.Numerics;
 
-namespace MathLib.Api.Model.Functions.InverseTrig
+namespace MathLib.Api.Functions.InverseTrig
 {
     public class ArcTangens : Function
     {
-        public ArcTangens()
-        {
-        }
-
         public ArcTangens(Function f)
         {
             InnerF = f;
         }
 
-        public Function InnerF { get; }
+        private Function InnerF { get; }
 
         #region Interface implementation
 

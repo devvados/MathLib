@@ -1,7 +1,7 @@
 using System;
-using MathLib.Api.Model.Base;
+using MathLib.Api.Base;
 
-namespace MathLib.Api.Model.Functions.Elementary
+namespace MathLib.Api.Functions.Elementary
 {
     // Exponential function
     public class Exponenta : Function
@@ -10,10 +10,6 @@ namespace MathLib.Api.Model.Functions.Elementary
         private readonly Function _innerF;
 
         // e^x or a^x
-        public Exponenta(double a = Math.E)
-        {
-            _a = a;
-        }
 
         // e^(f(x)) or a^(f(x))
         public Exponenta(Function f, double a = Math.E)

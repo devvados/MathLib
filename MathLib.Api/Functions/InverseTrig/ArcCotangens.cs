@@ -1,21 +1,17 @@
 using System;
-using MathLib.Api.Model.Base;
+using MathLib.Api.Base;
 using MathNet.Numerics;
 
-namespace MathLib.Api.Model.Functions.InverseTrig
+namespace MathLib.Api.Functions.InverseTrig
 {
     public class ArcCotangens : Function
     {
-        public ArcCotangens()
-        {
-        }
-
         public ArcCotangens(Function f)
         {
             InnerF = f;
         }
 
-        public Function InnerF { get; }
+        private Function InnerF { get; }
 
         #region Interface implementation
 
@@ -25,7 +21,7 @@ namespace MathLib.Api.Model.Functions.InverseTrig
             return Trig.Acot(val);
         }
 
-        // Deirvative rule
+        // Derivative rule
         public override Function Derivative()
         {
             return new Constant(-1) * (new Constant(1) / (new Constant(1) + (InnerF ^ new Constant(2)))) *

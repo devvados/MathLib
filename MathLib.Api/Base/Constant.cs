@@ -1,7 +1,8 @@
 using System;
 using System.Globalization;
+using MathLib.Api.Functions;
 
-namespace MathLib.Api.Model.Base
+namespace MathLib.Api.Base
 {
     public class Constant : Function
     {
@@ -23,7 +24,7 @@ namespace MathLib.Api.Model.Base
         // Derivative rule
         public override Function Derivative()
         {
-            return null; //Funcs.Zero;
+            return Funcs.Zero;
         }
 
         // Integration rule

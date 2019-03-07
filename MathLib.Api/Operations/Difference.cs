@@ -1,12 +1,12 @@
 using System;
-using MathLib.Api.Model.Base;
-using MathLib.Api.Model.Functions;
+using MathLib.Api.Base;
+using MathLib.Api.Functions;
 
-namespace MathLib.Api.Model.Operations
+namespace MathLib.Api.Operations
 {
-    public class Difference : Operator
+    internal class Difference : Operator
     {
-        public Difference(Function a, Function b) : base(a, b)
+        private Difference(Function a, Function b) : base(a, b)
         {
         }
 
@@ -35,7 +35,7 @@ namespace MathLib.Api.Model.Operations
         // Derivative rule
         public override Function Derivative()
         {
-            return null; //LeftFunc.Derivative() - RightFunc.Derivative();
+            return LeftFunc.Derivative() - RightFunc.Derivative();
         }
 
         // Integration rule

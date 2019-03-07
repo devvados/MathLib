@@ -1,6 +1,6 @@
-using MathLib.Api.Model.Base;
+using MathLib.Api.Base;
 
-namespace MathLib.Api.Model
+namespace MathLib.Api
 {
     public interface IIntegrable
     {

@@ -1,20 +1,16 @@
 using System;
-using MathLib.Api.Model.Base;
+using MathLib.Api.Base;
 
-namespace MathLib.Api.Model.Functions.Trigonometric
+namespace MathLib.Api.Functions.Trigonometric
 {
     public class Cosinus : Function
     {
-        public Cosinus()
-        {
-        }
-
         public Cosinus(Function f)
         {
             InnerF = f;
         }
 
-        public Function InnerF { get; }
+        private Function InnerF { get; }
 
         #region Interface implementation
 

@@ -1,14 +1,14 @@
 using System;
 using System.Collections.Generic;
 using System.Globalization;
-using MathLib.Api.Model.Base;
-using MathLib.Api.Model.Functions;
-using MathLib.Api.Model.Functions.Elementary;
-using MathLib.Api.Model.Functions.Hyperbolic;
-using MathLib.Api.Model.Functions.InverseTrig;
-using MathLib.Api.Model.Functions.Trigonometric;
-using MathLib.Api.Model.Operations;
-using MathLib.Utils.Parser.Grammar;
+using MathLib.Api.Base;
+using MathLib.Api.Functions;
+using MathLib.Api.Functions.Elementary;
+using MathLib.Api.Functions.Hyperbolic;
+using MathLib.Api.Functions.InverseTrig;
+using MathLib.Api.Functions.Trigonometric;
+using MathLib.Api.Operations;
+using MathLib.Utils.obj.Debug.netstandard2._0;
 
 namespace MathLib.Utils.Parser.Visitor
 {
@@ -40,7 +40,11 @@ namespace MathLib.Utils.Parser.Visitor
         /// <returns></returns>
         public override Function VisitPow(CalculatorParser.PowContext context)
         {
-            return new Power(Visit(context.expr(0)), Visit(context.expr(1)));
+            Function res = null;
+            
+            res = Visit(context.expr(0)) ^ Visit(context.expr(1));
+
+            return res;
         }
 
         /// <summary>

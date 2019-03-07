@@ -1,5 +1,4 @@
 using System;
-using MathLib.Api.Model.Base;
 using MathLib.Utils.Parser;
 
 namespace MathLib.Engine.Modules

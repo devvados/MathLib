@@ -1,10 +1,10 @@
 using System;
-using MathLib.Api.Model.Base;
-using MathLib.Api.Model.Functions;
+using MathLib.Api.Base;
+using MathLib.Api.Functions;
 
-namespace MathLib.Api.Model.Operations
+namespace MathLib.Api.Operations
 {
-    public class Addition : Operator
+    internal class Addition : Operator
     {
         private Addition(Function a, Function b) : base(a, b)
         {

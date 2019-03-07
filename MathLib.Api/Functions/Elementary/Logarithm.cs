@@ -1,7 +1,7 @@
 using System;
-using MathLib.Api.Model.Base;
+using MathLib.Api.Base;
 
-namespace MathLib.Api.Model.Functions.Elementary
+namespace MathLib.Api.Functions.Elementary
 {
     // Log (x) with base a
     public class Logarithm : Function
@@ -30,7 +30,7 @@ namespace MathLib.Api.Model.Functions.Elementary
             return Math.Log(val, _a);
         }
 
-        // Deirvative rule
+        // Derivative rule
         public override Function Derivative()
         {
             if (_innerF != null)

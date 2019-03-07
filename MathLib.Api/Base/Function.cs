@@ -1,6 +1,6 @@
-using MathLib.Api.Model.Operations;
+using MathLib.Api.Operations;
 
-namespace MathLib.Api.Model.Base
+namespace MathLib.Api.Base
 {
     public abstract class Function : IDifferentiable, IIntegrable, ICalc, IPrint
     {

@@ -1,20 +1,16 @@
 using System;
-using MathLib.Api.Model.Base;
+using MathLib.Api.Base;
 
-namespace MathLib.Api.Model.Functions.Hyperbolic
+namespace MathLib.Api.Functions.Hyperbolic
 {
     public class HypSinus : Function
     {
-        public HypSinus()
-        {
-        }
-
         public HypSinus(Function f)
         {
             InnerF = f;
         }
 
-        public Function InnerF { get; }
+        private Function InnerF { get; }
 
         #region Interface implementation
 

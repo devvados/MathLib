@@ -1,10 +1,10 @@
 using System;
-using MathLib.Api.Model.Base;
-using MathLib.Api.Model.Functions;
+using MathLib.Api.Base;
+using MathLib.Api.Functions;
 
-namespace MathLib.Api.Model.Operations
+namespace MathLib.Api.Operations
 {
-    public class Division : Operator
+    internal class Division : Operator
     {
         private Division(Function a, Function b) : base(a, b)
         {
@@ -19,10 +19,7 @@ namespace MathLib.Api.Model.Operations
             if (b is Constant && Math.Abs(b.Calc(0)) <= 10e-6)
                 throw new DivideByZeroException("Function b cannot be zero constant");
 
-            if (b is Constant)
-                return null; //new Constant(1 / b.Calc(0)) * a;
-
-            return new Division(a, b);
+            return b is Constant ? null : new Division(a, b);
         }
 
         #region Interface implementation

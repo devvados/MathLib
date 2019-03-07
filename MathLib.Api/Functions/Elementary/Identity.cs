@@ -1,15 +1,17 @@
 using System;
-using MathLib.Api.Model.Base;
+using MathLib.Api.Base;
 
-namespace MathLib.Api.Model.Functions.Elementary
+namespace MathLib.Api.Functions.Elementary
 {
     // Linear function
     public class Identity : Function
     {
-        //public Identity(string s)
-        //{
-        //    Symbol = s;
-        //}
+        public Identity() { }
+        
+        public Identity(string s)
+        {
+            Symbol = s;
+        }
 
         public string Symbol { get; set; }
 

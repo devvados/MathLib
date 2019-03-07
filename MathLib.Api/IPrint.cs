@@ -1,4 +1,4 @@
-namespace MathLib.Api.Model.Base
+namespace MathLib.Api
 {
     public interface IPrint
     {

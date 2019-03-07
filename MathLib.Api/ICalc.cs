@@ -1,4 +1,4 @@
-namespace MathLib.Api.Model
+namespace MathLib.Api
 {
     public interface ICalc
     {

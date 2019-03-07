@@ -1,21 +1,17 @@
 using System;
-using MathLib.Api.Model.Base;
+using MathLib.Api.Base;
 using MathNet.Numerics;
 
-namespace MathLib.Api.Model.Functions.Hyperbolic
+namespace MathLib.Api.Functions.Hyperbolic
 {
     public class HypCotangens : Function
     {
-        public HypCotangens()
-        {
-        }
-
         public HypCotangens(Function f)
         {
             InnerF = f;
         }
 
-        public Function InnerF { get; }
+        private Function InnerF { get; }
 
         #region Interface implementation
 

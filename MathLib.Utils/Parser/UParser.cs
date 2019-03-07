@@ -1,11 +1,11 @@
 using Antlr4.Runtime;
-using MathLib.Api.Model.Base;
-using MathLib.Utils.Parser.Grammar;
+using MathLib.Api.Base;
+using MathLib.Utils.obj.Debug.netstandard2._0;
 using MathLib.Utils.Parser.Visitor;
 
 namespace MathLib.Utils.Parser
 {
-    public class UParser
+    public static class UParser
     {
         public static Function Parse(string formula)
         {

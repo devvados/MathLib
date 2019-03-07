@@ -1,15 +1,11 @@
 using System;
-using MathLib.Api.Model.Base;
+using MathLib.Api.Base;
 
-namespace MathLib.Api.Model.Functions.Elementary
+namespace MathLib.Api.Functions.Elementary
 {
     public class Sqrt : Function
     {
         private readonly Function _innerF;
-
-        public Sqrt()
-        {
-        }
 
         public Sqrt(Function f)
         {

@@ -1,6 +1,6 @@
-using MathLib.Api.Model.Base;
+using MathLib.Api.Base;
 
-namespace MathLib.Api.Engine
+namespace MathLib.Engine
 {
     public interface IEngine
     {

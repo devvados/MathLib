@@ -1,11 +1,11 @@
 using System;
-using MathLib.Api.Model.Base;
-using MathLib.Api.Model.Functions.Elementary;
-using MathLib.Api.Model.Functions.Hyperbolic;
-using MathLib.Api.Model.Functions.InverseTrig;
-using MathLib.Api.Model.Functions.Trigonometric;
+using MathLib.Api.Base;
+using MathLib.Api.Functions.Elementary;
+using MathLib.Api.Functions.Hyperbolic;
+using MathLib.Api.Functions.InverseTrig;
+using MathLib.Api.Functions.Trigonometric;
 
-namespace MathLib.Api.Model.Functions
+namespace MathLib.Api.Functions
 {
     public static class Funcs
     {

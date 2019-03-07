@@ -1,21 +1,17 @@
 using System;
-using MathLib.Api.Model.Base;
+using MathLib.Api.Base;
 using MathNet.Numerics;
 
-namespace MathLib.Api.Model.Functions.Trigonometric
+namespace MathLib.Api.Functions.Trigonometric
 {
     public class Cotangens : Function
     {
-        public Cotangens()
-        {
-        }
-
         public Cotangens(Function f)
         {
             InnerF = f;
         }
 
-        public Function InnerF { get; }
+        private Function InnerF { get; }
 
         #region Interface implementation
 
