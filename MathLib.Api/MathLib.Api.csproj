@@ -10,9 +10,6 @@
       <Folder Include="Model\Functions\Hyperbolic" />
       <Folder Include="Model\Functions\InverseTrig" />
       <Folder Include="Model\Functions\Trigonometric" />
-      <Folder Include="Model\Operations" />
-      <Folder Include="Parser\Grammar" />
-      <Folder Include="Parser\Visitor" />
     </ItemGroup>
 
     <ItemGroup>
