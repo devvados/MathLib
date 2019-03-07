@@ -2,6 +2,15 @@
 
     <PropertyGroup>
         <TargetFramework>netstandard2.0</TargetFramework>
+        <PackOnBuild>true</PackOnBuild>
+        <Authors>Vadim Dmitriev</Authors>
+        <NeutralLanguage>en</NeutralLanguage>
+        <Owners>Vadim Dmitriev</Owners>
+        <PackageProjectUrl>https://github.com/vadim1195/MathLib</PackageProjectUrl>
+        <Title>MathLib</Title>
+        <Description>.NET Standard math library</Description>
+        <PackageId>MathLib.Engine</PackageId>
+        <PackageVersion>1.0.0</PackageVersion>
     </PropertyGroup>
 
     <ItemGroup>
@@ -9,4 +18,7 @@
       <ProjectReference Include="..\MathLib.Utils\MathLib.Utils.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2" />
+    </ItemGroup>
 </Project>

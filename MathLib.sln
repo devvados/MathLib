@@ -1,5 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathLib.Api", "MathLib.Api\MathLib.Api.csproj", "{DEE7F2A0-8514-4FE9-B189-96528C0EB3B0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MathLib.Utils", "MathLib.Utils\MathLib.Utils.csproj", "{170F76B2-0DFE-4896-9AC7-B36D56FD0D72}"

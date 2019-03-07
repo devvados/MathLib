@@ -6,6 +6,7 @@
 
     <ItemGroup>
       <PackageReference Include="MathNet.Numerics" Version="4.7.0" />
+      <PackageReference Include="NuGet.Build.Packaging" Version="0.2.2" />
     </ItemGroup>
 
 </Project>
