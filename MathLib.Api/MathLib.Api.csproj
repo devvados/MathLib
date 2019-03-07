@@ -5,10 +5,6 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="Engine\Modules" />
-    </ItemGroup>
-
-    <ItemGroup>
       <PackageReference Include="MathNet.Numerics" Version="4.7.0" />
     </ItemGroup>
 
