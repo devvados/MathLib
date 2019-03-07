@@ -6,10 +6,6 @@
 
     <ItemGroup>
       <Folder Include="Engine\Modules" />
-      <Folder Include="Model\Functions\Elementary" />
-      <Folder Include="Model\Functions\Hyperbolic" />
-      <Folder Include="Model\Functions\InverseTrig" />
-      <Folder Include="Model\Functions\Trigonometric" />
     </ItemGroup>
 
     <ItemGroup>

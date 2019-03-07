@@ -1,5 +1,6 @@
 using System;
 using MathLib.Api.Model.Base;
+using MathLib.Api.Model.Functions;
 
 namespace MathLib.Api.Model.Operations
 {
@@ -27,9 +28,9 @@ namespace MathLib.Api.Model.Operations
         // Derivative rule
         public override Function Derivative()
         {
-            //if (RightFunc is Constant)
-                //return RightFunc * (LeftFunc ^ (RightFunc - new Constant(1))) * LeftFunc.Derivative();
-            return null; //(RightFunc.Derivative() * Funcs.Ln(LeftFunc) + LeftFunc.Derivative() * RightFunc / LeftFunc) * this;
+            if (RightFunc is Constant)
+                return RightFunc * (LeftFunc ^ (RightFunc - new Constant(1))) * LeftFunc.Derivative();
+            return (RightFunc.Derivative() * Funcs.Ln(LeftFunc) + LeftFunc.Derivative() * RightFunc / LeftFunc) * this;
         }
 
         // Integration rule
@@ -51,7 +52,7 @@ namespace MathLib.Api.Model.Operations
         // Latex view
         public override string Print()
         {
-            return null; //LeftFunc.Print() + "^{" + RightFunc.Print() + "}";
+            return LeftFunc.Print() + "^{" + RightFunc.Print() + "}";
         }
 
         #endregion

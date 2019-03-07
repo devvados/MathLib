@@ -40,7 +40,7 @@ namespace MathLib.Api.Model.Operations
         // Derivative rule
         public override Function Derivative()
         {
-            return null; //LeftFunc.Derivative() * RightFunc + LeftFunc * RightFunc.Derivative();
+            return LeftFunc.Derivative() * RightFunc + LeftFunc * RightFunc.Derivative();
         }
 
         // Integration rule
@@ -62,7 +62,7 @@ namespace MathLib.Api.Model.Operations
         // Latex view
         public override string Print()
         {
-            return null; //LeftFunc.Print() + @"\cdot " + RightFunc.Print();
+            return LeftFunc.Print() + @"\cdot " + RightFunc.Print();
         }
 
         #endregion

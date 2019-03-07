@@ -1,5 +1,6 @@
 using System;
 using MathLib.Api.Model.Base;
+using MathLib.Api.Model.Functions;
 
 namespace MathLib.Api.Model.Operations
 {
@@ -14,7 +15,7 @@ namespace MathLib.Api.Model.Operations
             if (b is Constant && Math.Abs(b.Calc(0) - 1) <= 10e-6)
                 return a;
             if (a is Constant && Math.Abs(a.Calc(0)) <= 10e-6)
-                return null; //Funcs.Zero;
+                return Funcs.Zero;
             if (b is Constant && Math.Abs(b.Calc(0)) <= 10e-6)
                 throw new DivideByZeroException("Function b cannot be zero constant");
 
@@ -35,7 +36,7 @@ namespace MathLib.Api.Model.Operations
         // Derivative rule
         public override Function Derivative()
         {
-            return null; //(LeftFunc.Derivative() * RightFunc - RightFunc.Derivative() * LeftFunc) / (RightFunc * RightFunc);
+            return (LeftFunc.Derivative() * RightFunc - RightFunc.Derivative() * LeftFunc) / (RightFunc * RightFunc);
         }
 
         // Integration rule

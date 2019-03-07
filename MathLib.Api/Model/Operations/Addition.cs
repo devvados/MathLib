@@ -1,5 +1,6 @@
 using System;
 using MathLib.Api.Model.Base;
+using MathLib.Api.Model.Functions;
 
 namespace MathLib.Api.Model.Operations
 {
@@ -16,7 +17,7 @@ namespace MathLib.Api.Model.Operations
             if (a is Constant && Math.Abs(a.Calc(0)) <= 10e-6)
                 return b;
             if (a is Constant && b is Constant && Math.Abs(a.Calc(0) + b.Calc(0)) <= 10e-6)
-                return null; //Funcs.Zero;
+                return Funcs.Zero;
             if (a is Constant && b is Constant)
                 return new Constant(a.Calc(0) + b.Calc(0));
 
@@ -56,7 +57,7 @@ namespace MathLib.Api.Model.Operations
         // Latex view
         public override string Print()
         {
-            return null; //LeftFunc.ToLatexString() + "+" + RightFunc.ToLatexString();
+            return LeftFunc.Print() + "+" + RightFunc.Print();
         }
 
         #endregion
