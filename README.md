@@ -1,4 +1,4 @@
-# MathLin
+# MathLib
 C# math library
 
 The project consists of many functional modules:

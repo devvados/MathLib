@@ -7,8 +7,7 @@ using MathLib.Api.Functions.Elementary;
 using MathLib.Api.Functions.Hyperbolic;
 using MathLib.Api.Functions.InverseTrig;
 using MathLib.Api.Functions.Trigonometric;
-using MathLib.Api.Operations;
-using MathLib.Utils.obj.Debug.netstandard2._0;
+using MathLib.Utils.Parser.Grammar;
 
 namespace MathLib.Utils.Parser.Visitor
 {
