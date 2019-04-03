@@ -11,8 +11,12 @@ namespace MathLib.Engine.Modules
         {
             var parsedFunction = UParser.Parse(function);
             var derivativeFunction = parsedFunction.Derivative();
-            
-            return new OperationResult(derivativeFunction.ToString(), derivativeFunction.Print());
+
+            return new OperationResult
+            {
+                SimpleExpression = derivativeFunction.ToString(),
+                LatexExpression = derivativeFunction.Print()
+            };
         }
     }
 }

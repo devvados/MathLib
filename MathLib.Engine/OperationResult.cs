@@ -1,14 +1,8 @@
 namespace MathLib.Engine
 {
-    public struct OperationResult
+    public class OperationResult
     {
-        private string simpleExpression;
-        private string latexExpression;
-
-        public OperationResult(string simpleExpression, string latexExpression)
-        {
-            this.simpleExpression = simpleExpression;
-            this.latexExpression = latexExpression;
-        }
+        public string SimpleExpression { get; set; }
+        public string LatexExpression { get; set; }
     }
 }
