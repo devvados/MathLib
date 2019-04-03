@@ -7,12 +7,12 @@ namespace MathLib.Engine.Modules
     {
         public DerivativeEngine() { }
 
-        public ExpressionResponse Evaluate(string function)
+        public OperationResult Evaluate(string function)
         {
             var parsedFunction = UParser.Parse(function);
             var derivativeFunction = parsedFunction.Derivative();
             
-            return new ExpressionResponse(derivativeFunction.ToString(), derivativeFunction.Print());
+            return new OperationResult(derivativeFunction.ToString(), derivativeFunction.Print());
         }
     }
 }
