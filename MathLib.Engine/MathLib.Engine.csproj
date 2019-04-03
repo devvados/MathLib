@@ -10,7 +10,8 @@
         <Title>MathLib</Title>
         <Description>.NET Standard math library</Description>
         <PackageId>MathLib.Engine</PackageId>
-        <PackageVersion>1.0.0</PackageVersion>
+        <PackageVersion>1.0.1</PackageVersion>
+        <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
     </PropertyGroup>
 
     <ItemGroup>
