@@ -3,7 +3,7 @@ using MathLib.Utils.Parser;
 
 namespace MathLib.Engine.Modules
 {
-    public class DerivativeEngine
+    public class DerivativeEngine : IEngine
     {
         public DerivativeEngine() { }
 

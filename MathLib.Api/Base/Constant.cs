@@ -8,24 +8,15 @@ namespace MathLib.Api.Base
     {
         private readonly double _value;
 
-        public Constant(double val)
-        {
-            _value = val;
-        }
+        public Constant(double val) => _value = val;
 
         #region Interface implementation
 
         // Calculate function
-        public override double Calc(double val)
-        {
-            return _value;
-        }
+        public override double Calc(double val) => _value;
 
         // Derivative rule
-        public override Function Derivative()
-        {
-            return Funcs.Zero;
-        }
+        public override Function Derivative() => Funcs.Zero;
 
         // Integration rule
         public override Function Integrate()
@@ -38,16 +29,10 @@ namespace MathLib.Api.Base
         #region Print formula
 
         // String view
-        public override string ToString()
-        {
-            return _value.ToString("0.####", CultureInfo.InvariantCulture.NumberFormat);
-        }
+        public override string ToString() => _value.ToString("0.####", CultureInfo.InvariantCulture.NumberFormat);
 
         // Latex view
-        public override string Print()
-        {
-            return $"{_value}";
-        }
+        public override string Print() => $"{_value}";
 
         #endregion
     }

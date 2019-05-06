@@ -35,7 +35,7 @@ namespace MathLib.Api.Operations
         // Derivative rule
         public override Function Derivative()
         {
-            return null; //LeftFunc.Derivative() + RightFunc.Derivative();
+            return LeftFunc.Derivative() + RightFunc.Derivative();
         }
 
         // Integration rule

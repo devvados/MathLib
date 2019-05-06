@@ -9,6 +9,14 @@ namespace MathLib.Api.Functions
 {
     public static class Funcs
     {
+        // Sin(x) or Sin(g(x)) 
+
+        public static Function Sin(Function f = null)
+        {
+            return new Sinus(f);
+        }
+
+        // Cos(x) or Cos(g(x))
         public static readonly Function Zero = new Constant(0);
 
         public static readonly Function Id = new Identity();
@@ -55,13 +63,6 @@ namespace MathLib.Api.Functions
 
         #region Trigonometric Functions
 
-        // Sin(x) or Sin(g(x)) 
-        public static Function Sin(Function f = null)
-        {
-            return new Sinus(f);
-        }
-
-        // Cos(x) or Cos(g(x))
         public static Function Cos(Function f = null)
         {
             return new Cosinus(f);

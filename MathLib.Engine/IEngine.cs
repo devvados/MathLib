@@ -4,6 +4,6 @@ namespace MathLib.Engine
 {
     public interface IEngine
     {
-        Function Evaluate();
+        OperationResult Evaluate(string function);
     }
 }
