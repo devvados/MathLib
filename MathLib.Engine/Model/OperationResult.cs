@@ -1,4 +1,4 @@
-namespace MathLib.Engine
+namespace MathLib.Engine.Model
 {
     public class OperationResult
     {

@@ -32,11 +32,7 @@ namespace MathLib.Utils.Parser.Visitor
             {CalculatorParser.CTH, Funcs.Cth()}
         };
 
-        /// <summary>
-        ///     Power operator
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
+        // Power operator
         public override Function VisitPow(CalculatorParser.PowContext context)
         {
             Function res = null;
@@ -46,11 +42,7 @@ namespace MathLib.Utils.Parser.Visitor
             return res;
         }
 
-        /// <summary>
-        ///     Multiply or Divide operator
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
+        // Multiply or Divide operator
         public override Function VisitMulDiv(CalculatorParser.MulDivContext context)
         {
             Function res = null;
@@ -63,11 +55,7 @@ namespace MathLib.Utils.Parser.Visitor
             return res;
         }
 
-        /// <summary>
-        ///     Addition or Substraction operator
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
+        // Addition or Substraction operator
         public override Function VisitAddSub(CalculatorParser.AddSubContext context)
         {
             Function res = null;
@@ -80,21 +68,13 @@ namespace MathLib.Utils.Parser.Visitor
             return res;
         }
 
-        /// <summary>
-        ///     Value expression
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
+        // Value expression
         public override Function VisitVal(CalculatorParser.ValContext context)
         {
             return new Constant(Convert.ToDouble(context.VAL().GetText(), CultureInfo.InvariantCulture.NumberFormat));
         }
 
-        /// <summary>
-        ///     Function expression
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
+        // Function expression
         public override Function VisitFunction(CalculatorParser.FunctionContext context)
         {
             Function res = null;
@@ -140,31 +120,19 @@ namespace MathLib.Utils.Parser.Visitor
             return res;
         }
 
-        /// <summary>
-        ///     Parens
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
+        // Parens
         public override Function VisitParens(CalculatorParser.ParensContext context)
         {
             return Visit(context.expr());
         }
 
-        /// <summary>
-        ///     Identity (variable)
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
+        // Identity (variable)
         public override Function VisitIdentity(CalculatorParser.IdentityContext context)
         {
             return new Identity();
         }
 
-        /// <summary>
-        ///     Unary Minus operator
-        /// </summary>
-        /// <param name="context"></param>
-        /// <returns></returns>
+        // Unary Minus operator
         public override Function VisitMinus(CalculatorParser.MinusContext context)
         {
             return new Constant(-1) * Visit(context.expr());

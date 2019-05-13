@@ -1,13 +1,14 @@
+using System.Runtime.InteropServices;
 using Antlr4.Runtime;
 using MathLib.Api.Base;
 using MathLib.Utils.Parser.Grammar;
 using MathLib.Utils.Parser.Visitor;
 
-namespace MathLib.Utils.Parser
+namespace MathLib.Utils.Parser.Model
 {
-    public static class UParser
+    public class MathParser : IParser
     {
-        public static Function Parse(string formula)
+        public Function Parse(string formula)
         {
             var formulaObj = new CalculatorVisitor().Visit(
                 new CalculatorParser(new CommonTokenStream(
