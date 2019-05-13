@@ -1,4 +1,4 @@
-grammar Calculator;
+grammar Math;
 
 /// Parser
 

@@ -10,9 +10,9 @@ namespace MathLib.Utils.Parser.Model
     {
         public Function Parse(string formula)
         {
-            var formulaObj = new CalculatorVisitor().Visit(
-                new CalculatorParser(new CommonTokenStream(
-                    new CalculatorLexer(new AntlrInputStream(formula)))).prog());
+            var formulaObj = new MathVisitor().Visit(
+                new Grammar.MathParser(new CommonTokenStream(
+                    new MathLexer(new AntlrInputStream(formula)))).prog());
 
             return formulaObj;
         }

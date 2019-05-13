@@ -16,4 +16,8 @@
       <ProjectReference Include="..\MathLib.Api\MathLib.Api.csproj" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Parser\Grammar" />
+    </ItemGroup>
+
 </Project>

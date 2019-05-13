@@ -11,29 +11,29 @@ using MathLib.Utils.Parser.Grammar;
 
 namespace MathLib.Utils.Parser.Visitor
 {
-    public class CalculatorVisitor : CalculatorBaseVisitor<Function>
+    public class MathVisitor : MathBaseVisitor<Function>
     {
         private static readonly Dictionary<int, Function> FunctionMap = new Dictionary<int, Function>
         {
-            {CalculatorParser.SIN, Funcs.Sin()},
-            {CalculatorParser.COS, Funcs.Cos()},
-            {CalculatorParser.TAN, Funcs.Tan()},
-            {CalculatorParser.COT, Funcs.Cot()},
-            {CalculatorParser.ARCSIN, Funcs.Asin()},
-            {CalculatorParser.ARCCOS, Funcs.Acos()},
-            {CalculatorParser.ARCTAN, Funcs.Atan()},
-            {CalculatorParser.ARCCOT, Funcs.Acot()},
-            {CalculatorParser.SQRT, Funcs.Sq()},
-            {CalculatorParser.LN, Funcs.Ln()},
-            {CalculatorParser.EXP, Funcs.Exp()},
-            {CalculatorParser.SH, Funcs.Sh()},
-            {CalculatorParser.CH, Funcs.Ch()},
-            {CalculatorParser.TH, Funcs.Tgh()},
-            {CalculatorParser.CTH, Funcs.Cth()}
+            {MathParser.SIN, Funcs.Sin()},
+            {MathParser.COS, Funcs.Cos()},
+            {MathParser.TAN, Funcs.Tan()},
+            {MathParser.COT, Funcs.Cot()},
+            {MathParser.ARCSIN, Funcs.Asin()},
+            {MathParser.ARCCOS, Funcs.Acos()},
+            {MathParser.ARCTAN, Funcs.Atan()},
+            {MathParser.ARCCOT, Funcs.Acot()},
+            {MathParser.SQRT, Funcs.Sq()},
+            {MathParser.LN, Funcs.Ln()},
+            {MathParser.EXP, Funcs.Exp()},
+            {MathParser.SH, Funcs.Sh()},
+            {MathParser.CH, Funcs.Ch()},
+            {MathParser.TH, Funcs.Tgh()},
+            {MathParser.CTH, Funcs.Cth()}
         };
 
         // Power operator
-        public override Function VisitPow(CalculatorParser.PowContext context)
+        public override Function VisitPow(MathParser.PowContext context)
         {
             Function res = null;
             
@@ -43,7 +43,7 @@ namespace MathLib.Utils.Parser.Visitor
         }
 
         // Multiply or Divide operator
-        public override Function VisitMulDiv(CalculatorParser.MulDivContext context)
+        public override Function VisitMulDiv(MathParser.MulDivContext context)
         {
             Function res = null;
 
@@ -56,7 +56,7 @@ namespace MathLib.Utils.Parser.Visitor
         }
 
         // Addition or Substraction operator
-        public override Function VisitAddSub(CalculatorParser.AddSubContext context)
+        public override Function VisitAddSub(MathParser.AddSubContext context)
         {
             Function res = null;
 
@@ -69,13 +69,13 @@ namespace MathLib.Utils.Parser.Visitor
         }
 
         // Value expression
-        public override Function VisitVal(CalculatorParser.ValContext context)
+        public override Function VisitVal(MathParser.ValContext context)
         {
             return new Constant(Convert.ToDouble(context.VAL().GetText(), CultureInfo.InvariantCulture.NumberFormat));
         }
 
         // Function expression
-        public override Function VisitFunction(CalculatorParser.FunctionContext context)
+        public override Function VisitFunction(MathParser.FunctionContext context)
         {
             Function res = null;
 
@@ -121,19 +121,19 @@ namespace MathLib.Utils.Parser.Visitor
         }
 
         // Parens
-        public override Function VisitParens(CalculatorParser.ParensContext context)
+        public override Function VisitParens(MathParser.ParensContext context)
         {
             return Visit(context.expr());
         }
 
         // Identity (variable)
-        public override Function VisitIdentity(CalculatorParser.IdentityContext context)
+        public override Function VisitIdentity(MathParser.IdentityContext context)
         {
             return new Identity();
         }
 
         // Unary Minus operator
-        public override Function VisitMinus(CalculatorParser.MinusContext context)
+        public override Function VisitMinus(MathParser.MinusContext context)
         {
             return new Constant(-1) * Visit(context.expr());
         }
