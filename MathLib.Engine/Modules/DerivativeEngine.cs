@@ -2,6 +2,7 @@ using System.Diagnostics;
 using System.Xml.Schema;
 using MathLib.Engine.Model;
 using MathLib.Utils.Parser;
+using MathLib.Utils.Parser.Model;
 using MathNet.Symbolics;
 
 namespace MathLib.Engine.Modules
@@ -10,11 +11,9 @@ namespace MathLib.Engine.Modules
     {
         private readonly IParser _mathParser;
 
-        public DerivativeEngine() { }
-
-        public DerivativeEngine(IParser mathParser)
+        public DerivativeEngine()
         {
-            this._mathParser = mathParser;
+            _mathParser = new MathParser();
         }
 
         public OperationResult Evaluate(string function)
@@ -22,14 +21,16 @@ namespace MathLib.Engine.Modules
             var parsedFunction = _mathParser.Parse(function);
             var derivativeFunction = parsedFunction.Derivative();
 
-            var source = Trigonometric.Simplify(Infix.ParseOrThrow(parsedFunction.ToString()));
-            var derivative = Trigonometric.Simplify(Infix.ParseOrThrow(derivativeFunction.ToString()));
-            var latex = LaTeX.Format(source);
+            var simplifiedSourceFunction = Trigonometric.Simplify(Infix.ParseOrThrow(parsedFunction.ToString()));
+            var simplifiedDerivativeFunction = Trigonometric.Simplify(Infix.ParseOrThrow(derivativeFunction.ToString()));
+
+            var simplifiedDerivative = _mathParser.Parse(Infix.Format(simplifiedDerivativeFunction));
+            var latexDerivative = LaTeX.Format(simplifiedDerivativeFunction);
             
             return new OperationResult
             {
-                SimpleExpression = derivative.ToString(),
-                LatexExpression = latex
+                SimpleExpression = simplifiedDerivative.ToString(),
+                LatexExpression = latexDerivative
             };
         }
     }
