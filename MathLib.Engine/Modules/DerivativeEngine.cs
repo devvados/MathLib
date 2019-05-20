@@ -9,6 +9,9 @@ namespace MathLib.Engine.Modules
     public class DerivativeEngine : IEngine
     {
         private readonly IParser _mathParser;
+
+        public DerivativeEngine() { }
+
         public DerivativeEngine(IParser mathParser)
         {
             this._mathParser = mathParser;
